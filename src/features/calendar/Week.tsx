@@ -48,6 +48,7 @@ const getDate = (weeks: number, days: number) => {
 }
 
 const Week = ({ weekNumber }: { weekNumber: number }) => {
+  // const [hoveredCell] = useAtom(calendarHoverAtom)
   return (
     <CalendarRow>
       {Array.from({ length: 8 }).map((_, i) => (
@@ -57,7 +58,13 @@ const Week = ({ weekNumber }: { weekNumber: number }) => {
             {i === 0 ? (
               <WeekNumber weekNumber={weekNumber + 1} />
             ) : (
-              <Day date={getDate(weekNumber, i)} />
+              <Day
+                date={getDate(weekNumber, i)}
+                x={i}
+                y={weekNumber}
+                // dark={false}
+                // dark={hoveredCell?.x === i || hoveredCell?.y === weekNumber}
+              />
             )}
           </CellContent>
         </CellWrapper>

@@ -1,4 +1,4 @@
-import { getMonth, addWeeks, setWeek } from "date-fns"
+import { getMonth, setWeek } from "date-fns"
 import styled from "styled-components/macro"
 
 const StyledWeekNumber = styled.div<{ isisOnEdge: boolean }>`
